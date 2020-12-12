@@ -8,26 +8,24 @@ import javax.faces.view.ViewScoped;
 import model.Bebida;
 import service.BebidaService;
 
-
 @ManagedBean(name = "consultarBebida")
 @ViewScoped
 public class ConsultarBebidaBean {
 
-	private List<Bebida> todosRegistros;
+    private List<Bebida> todosRegistros;
 
-	public void consultar() {
-		todosRegistros = BebidaService.listarTodasBebidas();		 
-	}
+    public void consultar() {
+        todosRegistros = BebidaService.listarTodasBebidas();
+    }
 
-	public List<Bebida> getTodosRegistros() { 
-		consultar();
-		return todosRegistros;
-	}
+    public List<Bebida> getTodosRegistros() {
+//		consultar();
+//		return todosRegistros;
+        return BebidaService.todosRegistros;
+    }
 
-	public void setTodasBebidas(List<Bebida> bebidas) {
-		todosRegistros = bebidas ;
-	}
-	
+    public void setTodasBebidas(List<Bebida> bebidas) {
+        todosRegistros = bebidas;
+    }
 
-	
 }
